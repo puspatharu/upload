@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drop down</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button onclick="dropBox()" id="dropbtn">Drop from top</button>
+
+  <div id="box">
+    <div>drop</div>
+<button id="closebtn">close</button>
+  </div>
+  <script>
+    function dropDown(){
+      let button=document.getElementById('dropbtn')
+    }
+    function dropBox(){
+      let box=document.getElementById('box')
+      box.style.border="1px solid black"
+      box.style.height="400px"
+      box.style.width="400px"
+      box.style.backgroundColor="grey"
+    }
+  </script>
+</body>
+</html>
