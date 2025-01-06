@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drop down</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <button onclick="dropBox()" id="dropbtn">Drop from top</button>
+
+  <button id="dropbtn">Drop from top</button>
+
 
   <div id="box">
-    <div>drop</div>
-<button id="closebtn">close</button>
+    <button onclick="dropDown()">
+      drop
+    </button>
+
+    <button onclick="closebutton()" id="closebtn">close</button>
+
   </div>
+
   <script>
-    function dropDown(){
-      let button=document.getElementById('dropbtn')
+    let button = document.getElementById('dropbtn')
+
+    function dropDown() {
+      // button.style.top="200px"
+      button.style.translate = '0px 200px'
+      // button.style.transform='rotate(30deg)'ghg
+
     }
-    function dropBox(){
-      let box=document.getElementById('box')
-      box.style.border="1px solid black"
-      box.style.height="400px"
-      box.style.width="400px"
-      box.style.backgroundColor="grey"
+    function closebutton() {
+      button.style.translate='0px'
+      //  button.style.top='0px'
     }
+
+
   </script>
 </body>
+
 </html>

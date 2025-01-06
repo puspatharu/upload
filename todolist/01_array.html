@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>Todo list</h3>
+  <input type="text" placeholder="Enter a text" id="input">
+  
+  <button id="btn">Add</button>
+  <div id="text">
+  </div>
+
+  <script>
+
+    const myarr=['make dishes','wash dinner'];
+    editindex=null;
+const clickbutton=document.getElementById('btn');
+const addclickbutton=clickbutton.innerText;
+const username=document.getElementById('input');
+
+clickbutton.addEventListener('click',()=>{
+const inputElement=username.value
+console.log(inputElement);
+// for(let i=0;i<myarr.length;i++){
+// console.log(myarr[i]);
+// }
+if(editindex!==null){
+myarr.splice(editindex,1,
+inputElement);
+editindex=null;
+}else{
+  myarr.push(inputElement);
+}
+clickbutton.innerText=addclickbutton;
+todorander();
+});
+
+
+
+function todorander(){
+  const text=document.getElementById('text');
+  text.innerHTML='';
+myarr.map((val,i)=>{
+  // console.log(val)
+text.innerHTML+=`<p id="box">${val}
+  <button id="editbtn" onclick="editbtn(${i})">Edit</button>
+  <button id="detete" onclick="
+  deletetext(${i})
+  ">Delete</button>
+  </p>`
+})
+}
+function editbtn(a){
+editindex=a;
+ username.value=myarr[a];
+ clickbutton.innerText='Edit text'
+}
+function deletetext(a){
+myarr.splice(a,1)
+todorander();
+}
+todorander();
+
+
+    // first type array
+
+    // const myarr1=[1,2,3,'puspa',4,true]
+    // console.log(myarr1[5]);
+// myarr1.map((val,i)=>{
+//   console.log(val);
+// })
+
+
+    // second type array
+// const myarr2=[
+//   {
+//   name:'puspa',
+//   class:12
+// },
+// {
+//   name:"sita",
+//   age:20
+// }
+// ]
+// console.log(myarr2[1].name);
+// myarr2.map((val,i)=>{
+//   console.log(val);
+// })
+
+// const myarr3=[
+//   {
+//     name:"abc",
+//     class:15,
+//     book:[
+//       {
+//         title:'jhhsdkk',
+//         prize:1000
+//       }
+//     ]
+//   }
+// ]
+// console.log(myarr3[0].book[0].title)
+// myarr3.map((val,i)=>{
+//   console.log(val);
+// })
+  </script>
+</body>
+</html>

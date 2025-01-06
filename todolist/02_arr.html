@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>todolist second practice</title>
+  <style>
+    #displaytext,#container{
+      display: grid;
+      grid-template-columns: 200px 150px 100px;
+     gap: 20px;
+     font-size: 18px;
+    }
+   
+    input{
+      font-size: 18px;
+      padding: 4px;
+    }
+    #addbtn{
+background-color: green;
+color: white;
+font-size: 18px;
+border: none;
+    }
+    #deletebtn{
+      background-color:red;
+color: white;
+font-size: 18px;
+border: none;
+
+padding: 7px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Add todolist</h2>
+  <div id="container">
+    <input type="text" id="name">
+    <input type="date" id="mydate">
+    <button id="addbtn">Add</button>
+  </div>
+  <div id="text">
+  </div>
+  <script>
+const myarr=[{
+  name:"make dishes",
+  duedate:'2025-03-08'
+}]
+    const addbutton= document.getElementById('addbtn');
+    const myname=document.getElementById('name');
+    const mydate=document.getElementById('mydate');
+
+    addbutton.addEventListener('click',()=>{
+const mynamevalue=myname.value;
+const mydatevalue=mydate.value;
+myarr.push({
+  name:mynamevalue,
+  duedate:mydatevalue
+})
+showdata();
+})
+
+function showdata(){
+  const display=document.getElementById('text');
+  display.innerHTML='';
+myarr.forEach((val,i)=>{
+display.innerHTML+=`
+<div id="displaytext">
+<div id="inputname">${val.name}</div>
+<div id="inputdate">${val.duedate}</div>
+<button id="deletebtn" onclick="delbutton(${i})">Delete</button>
+</div>
+`
+})
+}
+
+function delbutton(a){
+myarr.splice(a,1);
+showdata();
+}
+showdata();
+  </script>
+</body>
+</html>

@@ -1,5 +1,13 @@
-/* #box{
+#box{
 height: 400px;
 width: 400px;
 border: 1px solid black;
-} */
+}
+
+#dropbtn{
+  position:absolute;
+  top: 0;
+  left: 150px;
+  transition: all 4s ease;
+  /* transition: 20px 30px; */
+}

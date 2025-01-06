@@ -1,0 +1,12 @@
+#first{
+  height: 50vh;
+  width: 100vw;
+  background-color: antiquewhite;
+  border: 2px solid black;
+}
+#second{
+  height: 50vh;
+  width: 100vw;
+  background-color: rgb(215, 250, 228);
+  border: 2px solid black;
+}
